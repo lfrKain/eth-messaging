@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "name": "Alice",
+    "address": "0x8561efcaE9713Cc3A89677a3e343f7FE29c2C0B6"
+  },
+  {
+    "id": 1,
+    "name": "Bob",
+    "address": "0x19596dA1bF1752a9d3CE3804E8E6128b382fC26d"
+  },
+  {
+    "id": 2,
+    "name": "Frank",
+    "address": "0x4ed8ee61a86df064186f56E43a0246d0ed5f48b0"
+  }
+]

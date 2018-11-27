@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Eth messaging</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Eth messaging</h1>
+          <h4 id="userName" class="text-center"></h4>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+      <div>
+        <h3>Send message</h3>
+        <div class="form-group">
+          <label for="receiver">Receiver:</label>
+          <select class="form-control" id="receiver">
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea class="form-control" id="message" rows="3" maxlength="500"></textarea>
+        </div>
+        <div class="form-group">
+          <input id="anonymousCheck" type="checkbox"> <label for="anonymousCheck">Send as anonymous</label>
+        </div>
+        <button id="sendMessageButton" type="button" class="btn btn-secondary">Send message</button>
+        <button id="importPrivateKey" type="button" class="btn btn-secondary">Import private key</button>
+      </div><br>
+      <div id="successAlert" class="alert alert-success" role="alert" style="display: none"></div>
+      <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none"></div>
+      <div>
+        <h3>Received messages <span id="newMessage" class="badge badge-secondary" style="display: none">New message</span></h3>
+        <div id="messages">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="pkModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modalLabel">Import private key</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input id="pk" type="text" class="form-control" id="recipient-name" maxlength="65" placeholder="Ethereum private key">
+                <label>Use the private key related to the connected account provided in the README.md. Do not set your personal Ethereum private key.</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="confirmPk" type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/erebos.production.js"></script>
+    <script src="js/eth-ecies.js"></script>
+    <script src="js/ethereumjs-util.js"></script>
+    <!--<script src="js/truffle-privatekey-provider.js"></script>-->
+    <script src="js/app.js"></script>
+  </body>
+</html>
